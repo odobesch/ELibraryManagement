@@ -36,13 +36,13 @@
 
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="#">Home</a>
+                            <a class="nav-link" href="homepage.aspx">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">About us</a>
+                            <a class="nav-link" href="aboutus.aspx">About us</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Terms</a>
+                            <a class="nav-link" href="terms.aspx">Terms</a>
                         </li>
                     </ul>
 
