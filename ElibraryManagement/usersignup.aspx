@@ -24,6 +24,7 @@
                                 </center>
                             </div>
                         </div>
+                        <hr /> 
 
                         <div class="row">
                             <div class="col-md-6 mt-2 mb-2">
