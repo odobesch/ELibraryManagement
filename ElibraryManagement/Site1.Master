@@ -79,7 +79,7 @@
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                         <p>
-                             <asp:LinkButton class="footerLinks" runat="server" ID="LinkButton6">Admin Login</asp:LinkButton>&nbsp
+                             <asp:LinkButton class="footerLinks" runat="server" href="adminlogin.aspx" ID="LinkButton6">Admin Login</asp:LinkButton>&nbsp
                              <asp:LinkButton class="footerLinks" runat="server" ID="LinkButton7">Author Management</asp:LinkButton>&nbsp
                              <asp:LinkButton class="footerLinks" runat="server" ID="LinkButton8">Publisher Management</asp:LinkButton>&nbsp
                              <asp:LinkButton class="footerLinks" runat="server" ID="LinkButton9">Book Inventory</asp:LinkButton>&nbsp
