@@ -48,19 +48,19 @@
 
                     <ul class="navbar-nav">
                         <li class="nav-item active">
-                            <asp:LinkButton ID="linkButton1" class="nav-link" runat="server" href="#">View Books</asp:LinkButton>
+                            <asp:LinkButton ID="viewBooksLinkButton" class="nav-link" runat="server" OnClick="viewBooksLinkButton_Click">View Books</asp:LinkButton>
                         </li>
                         <li class="nav-item active">
-                            <asp:LinkButton ID="linkButton2" class="nav-link" runat="server" href="userlogin.aspx">User Login</asp:LinkButton>
+                            <asp:LinkButton ID="userLoginLinkButton2" class="nav-link" runat="server" OnClick="userLoginLinkButton2_Click">User Login</asp:LinkButton>
                         </li>
                         <li class="nav-item active">
-                            <asp:LinkButton ID="linkButton3" class="nav-link" runat="server" href="#">Sign Up</asp:LinkButton>
+                            <asp:LinkButton ID="signUpLinkButton" class="nav-link" runat="server" OnClick="signUpLinkButton_Click">Sign Up</asp:LinkButton>
                         </li>
                         <li class="nav-item active">
-                            <asp:LinkButton ID="linkButton4" class="nav-link" runat="server" href="#">Logout</asp:LinkButton>
+                            <asp:LinkButton ID="logoutLinkButton" class="nav-link" runat="server" Visible="false" >Logout</asp:LinkButton>
                         </li>
                         <li class="nav-item active">
-                            <asp:LinkButton ID="linkButton5" class="nav-link" runat="server" href="#">Hello User</asp:LinkButton>
+                            <asp:LinkButton ID="helloUserLinkButton" class="nav-link" runat="server" Visible="false">Hello User</asp:LinkButton>
                         </li>
                     </ul>
                 </div>
@@ -79,12 +79,12 @@
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                         <p>
-                             <asp:LinkButton class="footerLinks" runat="server" href="adminlogin.aspx" ID="LinkButton6">Admin Login</asp:LinkButton>&nbsp
-                             <asp:LinkButton class="footerLinks" runat="server" ID="LinkButton7">Author Management</asp:LinkButton>&nbsp
-                             <asp:LinkButton class="footerLinks" runat="server" ID="LinkButton8">Publisher Management</asp:LinkButton>&nbsp
-                             <asp:LinkButton class="footerLinks" runat="server" ID="LinkButton9">Book Inventory</asp:LinkButton>&nbsp
-                             <asp:LinkButton class="footerLinks" runat="server" ID="LinkButton10">Book Issuing</asp:LinkButton>&nbsp
-                             <asp:LinkButton class="footerLinks" runat="server" ID="LinkButton11">Member Management</asp:LinkButton>
+                             <asp:LinkButton class="footerLinks" runat="server" ID="adminLoginLinkButton" OnClick="adminLoginLinkButton_Click">Admin Login</asp:LinkButton>&nbsp
+                             <asp:LinkButton class="footerLinks" runat="server" ID="authorMgmtLinkButton" Visible="false" OnClick="authorMgmtLinkButton_Click">Author Management</asp:LinkButton>&nbsp
+                             <asp:LinkButton class="footerLinks" runat="server" ID="publisherMgmtLinkButton" Visible="false" OnClick="publisherMgmtLinkButton_Click">Publisher Management</asp:LinkButton>&nbsp
+                             <asp:LinkButton class="footerLinks" runat="server" ID="bookInventoryLinkButton" Visible="false" OnClick="bookInventoryLinkButton_Click">Book Inventory</asp:LinkButton>&nbsp
+                             <asp:LinkButton class="footerLinks" runat="server" ID="bookIssuingLinkButton" Visible="false" OnClick="bookIssuingLinkButton_Click">Book Issuing</asp:LinkButton>&nbsp
+                             <asp:LinkButton class="footerLinks" runat="server" ID="memberMgmtLinkButton" Visible="false" OnClick="memberMgmtLinkButton_Click">Member Management</asp:LinkButton>
                         </p>
                     </div>
                 </div>
