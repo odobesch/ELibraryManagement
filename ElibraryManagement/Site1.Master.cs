@@ -11,7 +11,58 @@ namespace ElibraryManagement
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            try
+            {
+                if (Session["role"].Equals("")) 
+                {
+                    userLoginLinkButton2.Visible = true;
+                    signUpLinkButton.Visible = true;
 
+                    logoutLinkButton.Visible = false;
+                    helloUserLinkButton.Visible = false;
+
+                    adminLoginLinkButton.Visible = true;
+                    authorMgmtLinkButton.Visible = false;
+                    publisherMgmtLinkButton.Visible = false;
+                    bookInventoryLinkButton.Visible = false;
+                    bookIssuingLinkButton.Visible = false;
+                    memberMgmtLinkButton.Visible = false;
+                }
+                else if (Session["role"].Equals("user"))
+                {
+                    userLoginLinkButton2.Visible = false;
+                    signUpLinkButton.Visible = false;
+
+                    logoutLinkButton.Visible = true;
+                    helloUserLinkButton.Visible = true;
+                    helloUserLinkButton.Text = $"Hello {Session["userName"]}";
+
+                    adminLoginLinkButton.Visible = true;
+                    authorMgmtLinkButton.Visible = false;
+                    publisherMgmtLinkButton.Visible = false;
+                    bookInventoryLinkButton.Visible = false;
+                    bookIssuingLinkButton.Visible = false;
+                }
+                else if (Session["role"].Equals("admin"))
+                {
+                    userLoginLinkButton2.Visible = false;
+                    signUpLinkButton.Visible = false;
+
+                    logoutLinkButton.Visible = true;
+                    helloUserLinkButton.Visible = true;
+                    helloUserLinkButton.Text = $"Hello Admin";
+
+                    adminLoginLinkButton.Visible = false;
+                    authorMgmtLinkButton.Visible = true;
+                    publisherMgmtLinkButton.Visible = true;
+                    bookInventoryLinkButton.Visible = true;
+                    bookIssuingLinkButton.Visible = true;
+                }
+            }
+            catch (Exception)
+            {
+
+            }
         }
 
         protected void adminLoginLinkButton_Click(object sender, EventArgs e)
@@ -57,6 +108,27 @@ namespace ElibraryManagement
         protected void signUpLinkButton_Click(object sender, EventArgs e)
         {
             Response.Redirect("usersignup.aspx");
+        }
+
+        protected void logoutLinkButton_Click(object sender, EventArgs e)
+        {
+            Session["userName"] = "";
+            Session["fullName"] = "";
+            Session["role"] = "";
+            Session["status"] = "";
+
+            userLoginLinkButton2.Visible = true;
+            signUpLinkButton.Visible = true;
+
+            logoutLinkButton.Visible = false;
+            helloUserLinkButton.Visible = false;
+
+            adminLoginLinkButton.Visible = true;
+            authorMgmtLinkButton.Visible = false;
+            publisherMgmtLinkButton.Visible = false;
+            bookInventoryLinkButton.Visible = false;
+            bookIssuingLinkButton.Visible = false;
+            memberMgmtLinkButton.Visible = false;
         }
     }
 }

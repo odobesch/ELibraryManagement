@@ -43,7 +43,7 @@
                                 </div>
 
                                 <div class="form-group d-grid gap-2 pt-3 pt-md-4">
-                                    <asp:Button CssClass="btn btn-success" ID="btnUserMemberLogin" runat="server" Text="Login" />
+                                    <asp:Button CssClass="btn btn-success" ID="btnUserMemberLogin" runat="server" Text="Login" OnClick="btnUserMemberLogin_Click" />
                                 </div>
 
                                 <a href="usersignup.aspx">
