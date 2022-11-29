@@ -41,7 +41,7 @@ namespace ElibraryManagement
                     con.Open();
                 }
 
-                SqlCommand sqlCmd = new SqlCommand(@"SELECT member_id FROM member_master_tbl WHERE member_id = '"+ tbUserId.Text.Trim() +"'",
+                SqlCommand sqlCmd = new SqlCommand(@"SELECT member_id FROM member_master_tbl WHERE member_id = '" + tbUserId.Text.Trim() + "'",
                 con);
 
                 SqlDataAdapter da = new SqlDataAdapter(sqlCmd);
@@ -50,8 +50,8 @@ namespace ElibraryManagement
 
                 sqlCmd.ExecuteNonQuery();
                 con.Close();
-                
-                if(dt.Rows.Count >= 1)
+
+                if (dt.Rows.Count >= 1)
                 {
                     return true;
                 }

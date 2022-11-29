@@ -38,10 +38,10 @@ namespace ElibraryManagement
                     while (sdr.Read())
                     {
                         Response.Write("<script>alert('Login Successful');</script>");
-                        Session["userName"] = sdr.GetValue(8).ToString();
-                        Session["fullName"] = sdr.GetValue(0).ToString();
+                        Session["userName"] = sdr.GetValue(0).ToString();
+                        Session["fullName"] = sdr.GetValue(2).ToString();
                         Session["role"] = "admin";
-                        Session["status"] = sdr.GetValue(10).ToString();
+                        //Session["status"] = sdr.GetValue(10).ToString();
                     }
                     Response.Redirect("homepage.aspx");
                 }

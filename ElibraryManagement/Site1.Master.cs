@@ -12,8 +12,8 @@ namespace ElibraryManagement
         protected void Page_Load(object sender, EventArgs e)
         {
             try
-            {
-                if (Session["role"].Equals("")) 
+            {                
+                if (Session["role"] == null) 
                 {
                     userLoginLinkButton2.Visible = true;
                     signUpLinkButton.Visible = true;
@@ -61,7 +61,18 @@ namespace ElibraryManagement
             }
             catch (Exception)
             {
+                userLoginLinkButton2.Visible = true;
+                signUpLinkButton.Visible = true;
 
+                logoutLinkButton.Visible = false;
+                helloUserLinkButton.Visible = false;
+
+                adminLoginLinkButton.Visible = true;
+                authorMgmtLinkButton.Visible = false;
+                publisherMgmtLinkButton.Visible = false;
+                bookInventoryLinkButton.Visible = false;
+                bookIssuingLinkButton.Visible = false;
+                memberMgmtLinkButton.Visible = false;
             }
         }
 
