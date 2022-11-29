@@ -1,6 +1,15 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="adminpublishermanagement.aspx.cs" Inherits="ElibraryManagement.adminpublishermanagement" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script type="text/javascript">
+        //$(document).ready(function () {
+        //    $('.table').DataTable();
+        //});
+        $(document).ready(function () {
+            $('.table').prepend($("<thead></thead>").append($(this).find("tr:first"))).DataTable();
+        });
+    </script>
 </asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
      <div class="container">
         <div class="row">
@@ -28,28 +37,28 @@
                                 <label>Publisher ID</label>
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <asp:TextBox CssClass="form-control" ID="TextBox1" runat="server" placeholder="ID"></asp:TextBox>
-                                        <asp:Button CssClass="btn btn-primary" ID="Button1" runat="server" Text="Go" />
+                                        <asp:TextBox CssClass="form-control" ID="tbPublisherID" runat="server" placeholder="ID"></asp:TextBox>
+                                        <asp:Button CssClass="btn btn-primary" ID="btnGo" runat="server" Text="Go" OnClick="btnGo_Click" />
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-8 mt-2 mb-2">
                                 <label>Publisher Name</label>
                                 <div class="form-group">
-                                    <asp:TextBox CssClass="form-control" ID="TextBox2" runat="server" placeholder="Publisher Name"></asp:TextBox>
+                                    <asp:TextBox CssClass="form-control" ID="tbPublisherName" runat="server" placeholder="Publisher Name"></asp:TextBox>
                                 </div>
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col-4">
-                                <asp:Button ID="Button2" runat="server" Text="Add" CssClass="btn btn-lg btn-block btn-success" />
+                                <asp:Button ID="btnPublisherAdd" runat="server" Text="Add" CssClass="btn btn-lg btn-block btn-success" OnClick="btnPublisherAdd_Click"/>
                             </div>
                              <div class="col-4">
-                                <asp:Button ID="Button3" runat="server" Text="Update" CssClass="btn btn-lg btn-block btn-warning" />
+                                <asp:Button ID="btnPublisherUpdate" runat="server" Text="Update" CssClass="btn btn-lg btn-block btn-warning" OnClick="btnPublisherUpdate_Click" />
                             </div>
                              <div class="col-4">
-                                <asp:Button ID="Button4" runat="server" Text="Delete" CssClass="btn btn-lg btn-block btn-danger" />
+                                <asp:Button ID="btnPublisherDelete" runat="server" Text="Delete" CssClass="btn btn-lg btn-block btn-danger" OnClick="btnPublisherDelete_Click" />
                             </div>
                         </div>
                     </div>
@@ -78,8 +87,14 @@
                         </div>
 
                         <div class="row">
+                            <asp:SqlDataSource ID="publisherSqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:eLibraryDBConnectionString %>" SelectCommand="SELECT * FROM [publisher_mastel_tbl]"></asp:SqlDataSource>
                             <div class="col">
-                                <asp:GridView ID="GridView1" class="table table-striped table-bordered" runat="server"></asp:GridView>
+                                <asp:GridView ID="publisherGridView" class="table table-striped table-bordered" runat="server" AutoGenerateColumns="False" DataKeyNames="publisher_id" DataSourceID="publisherSqlDataSource">
+                                    <Columns>
+                                        <asp:BoundField DataField="publisher_id" HeaderText="publisher_id" ReadOnly="True" SortExpression="publisher_id" />
+                                        <asp:BoundField DataField="publisher_name" HeaderText="publisher_name" SortExpression="publisher_name" />
+                                    </Columns>
+                                </asp:GridView>
                             </div>
                         </div>
                     </div>
