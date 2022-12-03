@@ -33,13 +33,13 @@ namespace ElibraryManagement
         protected global::System.Web.UI.WebControls.TextBox tbBookID;
 
         /// <summary>
-        /// LinkButton4 control.
+        /// btnGo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButton4;
+        protected global::System.Web.UI.WebControls.Button btnGo;
 
         /// <summary>
         /// tbBookName control.
