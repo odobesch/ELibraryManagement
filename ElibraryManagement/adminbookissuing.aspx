@@ -119,7 +119,7 @@
                         <div class="row">
                             <asp:SqlDataSource ID="bookIssuingSqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:eLibraryDBConnectionString %>" SelectCommand="SELECT * FROM [book_issue_tbl]"></asp:SqlDataSource>
                             <div class="col">
-                                <asp:GridView ID="bookIssuingGridView" class="table table-striped table-bordered" runat="server" AutoGenerateColumns="False" DataSourceID="bookIssuingSqlDataSource">
+                                <asp:GridView ID="bookIssuingGridView" class="table table-striped table-bordered" runat="server" AutoGenerateColumns="False" DataSourceID="bookIssuingSqlDataSource" OnRowDataBound="bookIssuingGridView_RowDataBound">
                                     <Columns>
                                         <asp:BoundField DataField="member_id" HeaderText="Member ID" SortExpression="member_id" />
                                         <asp:BoundField DataField="member_name" HeaderText="Member Name" SortExpression="member_name" />

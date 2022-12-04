@@ -141,5 +141,10 @@ namespace ElibraryManagement
             bookIssuingLinkButton.Visible = false;
             memberMgmtLinkButton.Visible = false;
         }
+
+        protected void helloUserLinkButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("userprofile.aspx");
+        }
     }
 }
